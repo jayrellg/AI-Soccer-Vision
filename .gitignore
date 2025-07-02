@@ -1,0 +1,18 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# large model checkpoints (files too big for github pushes)
+*.pt
+
+# rendered videos and YOLO run artifacts (files too big for github pushes)
+*.avi
+runs/
+output_videos/

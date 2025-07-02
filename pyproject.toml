@@ -1,0 +1,15 @@
+[project]
+name = "ai-soccer-analysis-system"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=6.29.5",
+    "opencv-python>=4.11.0.86",
+    "python-dotenv>=1.1.1",
+    "roboflow>=1.1.66",
+    "scikit-learn>=1.7.0",
+    "supervision>=0.25.1",
+    "ultralytics>=8.3.159",
+]
