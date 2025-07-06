@@ -1,5 +1,5 @@
 from ultralytics import YOLO 
-from utils import get_center_of_bbox, get_bbox_width
+from utils import get_center_of_bbox, get_bbox_width, get_foot_position
 import supervision as sv #Roboflow’s helper lib for drawing, tracking, etc.
 import pickle
 import os
@@ -25,6 +25,18 @@ class Tracker:
             detections += detections_batch
         return detections
 
+    def add_position_to_tracks(sekf,tracks):
+        for object, object_tracks in tracks.items():
+            for frame_num, track in enumerate(object_tracks):
+                for track_id, track_info in track.items():
+                    bbox = track_info['bbox']
+                    if object == 'ball':
+                        position = get_center_of_bbox(bbox)
+                    else:
+                        position = get_foot_position(bbox)
+                    tracks[object][frame_num][track_id]['position'] = position
+
+
     def interpolate_ball_positions(self,ball_positions):
         """
         Fill in missing ball detections so every video frame contains a bbox.
@@ -45,7 +57,6 @@ class Tracker:
         list[dict]
             Same list length, but all frames now have a bbox (interpolated).
         """
-
 
         ball_positions = [x.get(1,{}).get('bbox',[]) for x in ball_positions]
         df_ball_positions = pd.DataFrame(ball_positions,columns=['x1','y1','x2','y2'])
