@@ -25,7 +25,7 @@ class Tracker:
             detections += detections_batch
         return detections
 
-    def add_position_to_tracks(sekf,tracks):
+    def add_position_to_tracks(self,tracks):
         for object, object_tracks in tracks.items():
             for frame_num, track in enumerate(object_tracks):
                 for track_id, track_info in track.items():

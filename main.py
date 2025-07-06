@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import os
 from utils import read_video, save_video
 from trackers import Tracker
 from team_assigner import TeamAssigner
@@ -94,6 +95,8 @@ def main():
     speed_and_distance_estimator.draw_speed_and_distance(output_video_frames,tracks)
 
     # Save video
+    # Create output directory if it doesn't exist
+    os.makedirs('output_videos', exist_ok=True)
     save_video(output_video_frames, 'output_videos/output_video.avi')
 
 if __name__ == "__main__":
