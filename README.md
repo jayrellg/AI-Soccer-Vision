@@ -25,18 +25,20 @@ _End‑to‑end computer‑vision analytics for soccer footage built with Python
 ## Directory Overview
 
 
+```
 AI-Soccer-Vision/
-├── camara_movement_estimater/   # Optical‑flow camera‑motion estimation
-├── input_videos/                # Raw test clips (mp4)
-├── models/                      # YOLOv8 weights (best.pt)
-├── player_ball_assigner/        # Ball‑to‑player linking logic
-├── speed_and_distance_estimator/# Speed & distance metrics
-├── team_assigner/               # Jersey‑colour K‑Means clustering
-├── trackers/                    # YOLOv8 + ByteTrack wrapper
-├── utils/                       # Helper utilities (video I/O, geometry)
-├── view_transformer/            # Homography to field coordinates
-├── training/                    # Notebooks & configs for detector training
-└── main.py                      # Pipeline entrypoint
+├── camara_movement_estimater/     # Optical-flow camera-motion estimation
+├── input_videos/                  # Raw test clips (mp4)
+├── models/                        # YOLOv8 weights (best.pt)
+├── player_ball_assigner/          # Ball-to-player linking logic
+├── speed_and_distance_estimator/  # Speed & distance metrics
+├── team_assigner/                 # Jersey-colour K-Means clustering
+├── trackers/                      # YOLOv8 + ByteTrack wrapper
+├── utils/                         # Helper utilities (video I/O, geometry)
+├── view_transformer/              # Homography to field coordinates
+├── training/                      # Notebooks & configs for detector training
+└── main.py                        # Pipeline entrypoint
+```
 
 ## Acknowledgements
 
