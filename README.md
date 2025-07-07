@@ -1,5 +1,7 @@
 # AI Soccer Vision
 
+![Annotated match frame](SoccerAiSC.jpg)
+
 _End‑to‑end computer‑vision analytics for soccer footage built with Python & YOLOv8_
 
 ----------
